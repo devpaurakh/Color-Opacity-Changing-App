@@ -1,6 +1,8 @@
 import 'package:coloropacityapp/bloc/switch_bloc/switch_bloc.dart';
 import 'package:coloropacityapp/bloc/switch_bloc/switch_event.dart';
 import 'package:coloropacityapp/bloc/switch_bloc/switch_state.dart';
+import 'package:coloropacityapp/ui/image_picker.screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -50,18 +52,17 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontWeight: FontWeight.bold),
                     ),
                     BlocBuilder<SwitchBloc, SwitchState>(
-                      buildWhen: (previous, current) =>
-                          previous.isSwitched != current.isSwitched,
-
+                        buildWhen: (previous, current) =>
+                            previous.isSwitched != current.isSwitched,
                         builder: (context, state) {
-                      return Switch(
-                          value: state.isSwitched,
-                          onChanged: (newvalue) {
-                            context
-                                .read<SwitchBloc>()
-                                .add(enableOrDisableSwitch());
-                          });
-                    })
+                          return Switch(
+                              value: state.isSwitched,
+                              onChanged: (newvalue) {
+                                context
+                                    .read<SwitchBloc>()
+                                    .add(enableOrDisableSwitch());
+                              });
+                        })
                   ],
                 ),
                 const SizedBox(
@@ -80,11 +81,24 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 20,
                 ),
                 BlocBuilder<SwitchBloc, SwitchState>(builder: (context, state) {
-                  return Slider( value: state.sliderValue, onChanged: (newValue) {
-                    context.read<SwitchBloc>().add(slider(sliderValue: newValue));
-                  });
-                  
+                  return Slider(
+                      value: state.sliderValue,
+                      onChanged: (newValue) {
+                        context
+                            .read<SwitchBloc>()
+                            .add(slider(sliderValue: newValue));
+                      });
                 }),
+                Container(
+                    width: 200,
+                    height: 60,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20)),
+                    child: CupertinoButton(
+                        child: const Text("Image Picker"), onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> ImagePickerScreen()));
+                        }))
               ],
             ),
           )
