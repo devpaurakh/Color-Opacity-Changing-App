@@ -1,7 +1,7 @@
 import 'package:coloropacityapp/bloc/switch_bloc/switch_bloc.dart';
 import 'package:coloropacityapp/bloc/switch_bloc/switch_event.dart';
 import 'package:coloropacityapp/bloc/switch_bloc/switch_state.dart';
-import 'package:coloropacityapp/ui/image_picker.screen.dart';
+import 'package:coloropacityapp/ui/imagepicker/image_picker.screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
