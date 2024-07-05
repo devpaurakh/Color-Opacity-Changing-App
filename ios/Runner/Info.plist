@@ -5,7 +5,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>camera use in  flutter</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>photo use in flutter</string>
+	<string>camera use in flutter</string>
 
 
 	<key>CFBundleDevelopmentRegion</key>
