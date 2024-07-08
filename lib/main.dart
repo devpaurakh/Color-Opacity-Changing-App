@@ -1,6 +1,6 @@
 import 'package:coloropacityapp/bloc/imagepicker_bloc/imagepicker_bloc.dart';
 import 'package:coloropacityapp/bloc/switch_bloc/switch_bloc.dart';
-import 'package:coloropacityapp/ui/home.screen.dart';
+import 'package:coloropacityapp/ui/todo/todo.screen.dart';
 import 'package:coloropacityapp/utiles/imagepicker.utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const HomeScreen(),
+        home: const TodoListScreen(),
       ),
     );
   }
