@@ -1,5 +1,6 @@
 import 'package:coloropacityapp/bloc/imagepicker_bloc/imagepicker_bloc.dart';
 import 'package:coloropacityapp/bloc/switch_bloc/switch_bloc.dart';
+import 'package:coloropacityapp/bloc/todo/todo_bloc.dart';
 import 'package:coloropacityapp/ui/todo/todo.screen.dart';
 import 'package:coloropacityapp/utiles/imagepicker.utils.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,12 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => SwitchBloc()),
-        BlocProvider(create: (_)=> ImagePickerBloc(MyImagePicker()))
+        BlocProvider(
+          create: (_) => ImagePickerBloc(
+            MyImagePicker(),
+          ),
+        ),
+        BlocProvider(create: (_) => TodoBloc()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
