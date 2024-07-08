@@ -15,7 +15,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
         title: const Text("Todo List"),
       ),
       body: ListView.builder(
-          itemCount: 16,
+          itemCount: 9,
           itemBuilder: (context, index) {
             return ListTile(
               title: Text(
@@ -27,6 +27,10 @@ class _TodoListScreenState extends State<TodoListScreen> {
               ),
             );
           }),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
