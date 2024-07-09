@@ -49,7 +49,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-         for (var i = 0; i < 2; i++) {
+         for (var i = 0; i < 5; i++) {
 
            context.read<TodoBloc>().add(AddTodoEvents(task: "task: $i"));
          }
