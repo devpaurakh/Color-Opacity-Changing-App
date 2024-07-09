@@ -15,9 +15,7 @@ class FavouriteApp extends StatefulWidget {
 class _FavouriteAppState extends State<FavouriteApp> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-
     context.read<FavouriteAppBloc>().add(FetchFavouriteList());
   }
 
@@ -26,6 +24,25 @@ class _FavouriteAppState extends State<FavouriteApp> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Favourite App"),
+        actions: [
+          
+          BlocBuilder<FavouriteAppBloc, FavouriteAppState>(builder: (context, state){
+            return Visibility(
+              visible: state.tempFavouriteItems.isNotEmpty ? true : false,
+              child: IconButton(
+                onPressed: () {
+                   context.read<FavouriteAppBloc>().add(DeleteItem());
+                },
+                icon: const Icon(
+                  Icons.delete,
+                  color: Colors.red,
+                )),
+            );
+
+           
+
+          })
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -47,7 +64,21 @@ class _FavouriteAppState extends State<FavouriteApp> {
                     final item = state.favouriteItems[index];
                     return Card(
                       child: ListTile(
-                        leading: Checkbox(value: true, onChanged: (value){}),
+                        leading: Checkbox(
+                            value: state.tempFavouriteItems.contains(item)
+                                ? true
+                                : false,
+                            onChanged: (value) {
+                              if (value == true) {
+                                context
+                                    .read<FavouriteAppBloc>()
+                                    .add(SelectItemListItem(item: item));
+                              } else {
+                                context
+                                    .read<FavouriteAppBloc>()
+                                    .add(UnSelectItemListItem(item: item));
+                              }
+                            }),
                         title: Text(item.value.toString()),
                         trailing: IconButton(
                             onPressed: () {
@@ -63,8 +94,7 @@ class _FavouriteAppState extends State<FavouriteApp> {
                             icon: Icon(item.isFavourite
                                 ? Icons.favorite
                                 : Icons.favorite_outline)),
-
-                            tileColor: item.isFavourite ? Colors.pinkAccent : null,
+                        tileColor: item.isFavourite ? Colors.purple : null,
                       ),
                     );
                   });

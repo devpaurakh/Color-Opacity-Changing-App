@@ -18,11 +18,11 @@ class FavouriteAppState extends Equatable {
       {List<FavouriteItemsModel>? favouriteItems, List<FavouriteItemsModel>? tempFavouriteItems,  ListStatus? listStatus}) {
     return FavouriteAppState(
       favouriteItems: favouriteItems ?? this.favouriteItems,
-       tempFavouriteItems: tempFavouriteItems ?? this.tempFavouriteItems,
+      tempFavouriteItems: tempFavouriteItems ?? this.tempFavouriteItems,
       listStatus: listStatus ?? this.listStatus,
     );
   }
 
   @override
-  List<Object?> get props => [favouriteItems, listStatus,tempFavouriteItems];
+  List<Object?> get props => [favouriteItems, tempFavouriteItems, listStatus,];
 }

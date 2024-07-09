@@ -25,18 +25,22 @@ class FetchFavouriteListItem extends FavouriteAppEvent{
 
 class SelectItemListItem extends FavouriteAppEvent{
 
-  final FavouriteItemsModel selectItem;
+  final FavouriteItemsModel item;
 
-  const SelectItemListItem({required this.selectItem});
+  const SelectItemListItem({required this.item});
   
 }
 
 
 class UnSelectItemListItem extends FavouriteAppEvent{
 
-  final FavouriteItemsModel unSelectItem;
+  final FavouriteItemsModel item;
 
-  const UnSelectItemListItem({required this.unSelectItem});
+  const UnSelectItemListItem({required this.item});
+  
+}
+
+class DeleteItem extends FavouriteAppEvent{
   
 }
 
