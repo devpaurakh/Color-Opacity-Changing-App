@@ -5,7 +5,7 @@ Changing Opacity of the color Using Bloc Pattern and Also have image Picker whic
 1. screenshot 1,2 => Changing Opacity of the color
 2. screenshot 3 => image Picker
 3. screenshot 4 => Basic adding and deleting tiles date :- 8 july 2024
-4. Screenshot 5 => Favourite checkbox and delete function :- 10 jly 2024
+4. Screenshot 5 => Favourite checkbox and delete function :- 10 july 2024
 
 
 ## ScreenShots
