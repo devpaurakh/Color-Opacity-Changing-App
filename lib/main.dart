@@ -1,5 +1,6 @@
 import 'package:coloropacityapp/bloc/favourite_bloc/favourite_app_bloc.dart';
 import 'package:coloropacityapp/bloc/imagepicker_bloc/imagepicker_bloc.dart';
+import 'package:coloropacityapp/bloc/product/product_bloc.dart';
 import 'package:coloropacityapp/bloc/switch_bloc/switch_bloc.dart';
 import 'package:coloropacityapp/bloc/todo/todo_bloc.dart';
 import 'package:coloropacityapp/repository/favourite_repository.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(create: (_) => TodoBloc()),
         BlocProvider(create: (_) => FavouriteAppBloc(FavouriteRepository())),
+        BlocProvider(create: (_) => ProductBloc()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
