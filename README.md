@@ -6,6 +6,7 @@ Changing Opacity of the color Using Bloc Pattern and Also have image Picker whic
 2. screenshot 3 => image Picker
 3. screenshot 4 => Basic adding and deleting tiles date :- 8 july 2024
 4. Screenshot 5 => Favourite checkbox and delete function :- 10 july 2024
+5. ScreenShot 6 => Fake Store Api Fetched :- 11 july 2024
 
 
 ## ScreenShots
@@ -19,5 +20,7 @@ Changing Opacity of the color Using Bloc Pattern and Also have image Picker whic
 <img width="327" alt="Screenshot 2024-07-08 at 11 01 45 PM" src="https://github.com/devpaurakh/Color-Opacity-Changing-App/assets/100192320/c7a32d5a-f4bf-4f1d-a953-3997b8c93583">
 
 <img width="314" alt="Screenshot 2024-07-10 at 1 10 45 AM" src="https://github.com/devpaurakh/Color-Opacity-Changing-App/assets/100192320/06f052df-8f70-447d-ae58-be5f778b9c95">
+
+<img width="446" alt="Screenshot 2024-07-11 at 1 24 43 AM" src="https://github.com/devpaurakh/Color-Opacity-Changing-App/assets/100192320/b9675652-b985-440a-883f-a73e0385039d">
 
 
