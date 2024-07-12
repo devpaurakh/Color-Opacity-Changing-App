@@ -36,40 +36,42 @@ class _ProductScreenState extends State<ProductScreen> {
                 itemCount: state.productList.length,
                 itemBuilder: (context, index) {
                   final item = state.productList[index];
-                  // return ListTile(
-                  //   title: Text(item.title.toString()),
-                  //   subtitle: Text(item.price.toString()),
-
-                  return Padding(
-                    padding:
-                        const EdgeInsets.only(left: 20.0, top: 10, right: 20.0),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Image.network(
-                          item.image.toString(),
-                          height: 150,
-                          width: 150,
-                        ),
-                        Column(
+                  return Column(
+                    children: [
+                      const Divider(),
+                      Padding(
+                        padding:
+                            const EdgeInsets.only(left: 20.0, top: 10, right: 20.0),
+                        child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(
-                              width: 200,
-                              child: Text(
-                                item.title.toString(),
-                                maxLines: 100,
-                                style: const TextStyle(
-                                    fontWeight: FontWeight.bold),
-                              ),
+                            
+                            Image.network(
+                              item.image.toString(),
+                              height: 150,
+                              width: 150,
                             ),
-                            Text(" \$${item.price.toString()}"),
-
-                            Text(" Category: ${item.category.toString()}")
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                
+                                SizedBox(
+                                  width: 200,
+                                  child: Text(
+                                    item.title.toString(),
+                                    maxLines: 100,
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                Text(" \$${item.price.toString()}"),
+                                Text(" Category: ${item.category.toString()}")
+                              ],
+                            )
                           ],
-                        )
-                      ],
-                    ),
+                        ),
+                      ),
+                    ],
                   );
                 });
         }

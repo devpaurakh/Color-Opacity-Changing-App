@@ -20,8 +20,6 @@ class ProductBloc extends Bloc<ProductEvent, ProductState>{
       emit(state.copyWith(status: Status.success,message: "We Got the Data",productList: value));
 
     }).onError((error, stackTrace) {
-      print(error);
-      print(stackTrace);
       emit(state.copyWith(status: Status.failure,message: error.toString()));
     },);
 }
