@@ -1,8 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:ffi';
 import 'dart:io';
-
 import 'package:coloropacityapp/model/products.models.dart';
 import 'package:http/http.dart' as http;
 
