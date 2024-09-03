@@ -8,6 +8,7 @@ Changing Opacity of the color Using Bloc Pattern and Also have image Picker whic
 4. Screenshot 5 => Favourite checkbox and delete function :- 10 july 2024
 5. ScreenShot 6 => Fake Store Api Fetched :- 11 july 2024
 6. ScreenShots 7 => Added search textformfiled  :- 3 sept 2024
+7. ScreenShots 8 => Added Serching Funclities :- 3 sept 2024
 
 
 ## ScreenShots
@@ -19,5 +20,6 @@ Changing Opacity of the color Using Bloc Pattern and Also have image Picker whic
 <img width="300" alt="Screenshot 2024-07-10 at 1 10 45 AM" src="https://github.com/devpaurakh/Color-Opacity-Changing-App/assets/100192320/06f052df-8f70-447d-ae58-be5f778b9c95">
 <img width="300" alt="Screenshot 2024-07-11 at 1 24 43 AM" src="https://github.com/devpaurakh/Color-Opacity-Changing-App/assets/100192320/b9675652-b985-440a-883f-a73e0385039d">
 <img width="300" alt="Screenshot 2024-09-03 at 3 45 17 PM" src="https://github.com/user-attachments/assets/254820a9-8c37-4e33-8cba-e2655bd3a7aa">
+<img width="300" alt="Screenshot 2024-09-03 at 5 06 56 PM" src="https://github.com/user-attachments/assets/6f35c451-104e-46b9-a9e6-f7535c758086">
 
 
