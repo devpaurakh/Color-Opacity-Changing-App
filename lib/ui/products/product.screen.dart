@@ -32,47 +32,77 @@ class _ProductScreenState extends State<ProductScreen> {
           case Status.failure:
             return Center(child: Text(state.message));
           case Status.success:
-            return ListView.builder(
-                itemCount: state.productList.length,
-                itemBuilder: (context, index) {
-                  final item = state.productList[index];
-                  return Column(
-                    children: [
-                      const Divider(),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            left: 20.0, top: 10, right: 20.0),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Image.network(
-                              item.image.toString(),
-                              height: 120,
-                              width: 120,
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(
-                                  width: 200,
-                                  child: Text(
-                                    item.title.toString(),
-                                    overflow: TextOverflow.ellipsis,
-                                    maxLines: 100,
-                                    style: const TextStyle(
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                                Text(" Rs. ${item.price.toString()}"),
-                                Text(item.category.toString())
-                              ],
-                            )
-                          ],
+            return Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
+                  child: TextFormField(
+                    decoration: const InputDecoration(
+                      prefixIcon: Icon(Icons.search),
+                      hintText: " Search with Product name",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(5),
                         ),
                       ),
-                    ],
-                  );
-                });
+                    ),
+                    onChanged: (fliterKey) {
+                      
+                    },
+                  ),
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                Expanded(
+                  child: ListView.builder(
+                      itemCount: state.productList.length,
+                      itemBuilder: (context, index) {
+                        final item = state.productList[index];
+                        return Column(
+                          children: [
+                            const Divider(),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 20.0, top: 10, right: 0),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Image.network(
+                                    item.image.toString(),
+                                    height: 120,
+                                    width: 120,
+                                  ),
+                                  const SizedBox(
+                                    width: 25,
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      SizedBox(
+                                        width: 200,
+                                        child: Text(
+                                          item.title.toString(),
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 100,
+                                          style: const TextStyle(
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ),
+                                      Text(" Rs. ${item.price.toString()}"),
+                                      Text(item.category.toString())
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        );
+                      }),
+                ),
+              ],
+            );
         }
       }),
     );
