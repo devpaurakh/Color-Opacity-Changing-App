@@ -40,32 +40,31 @@ class _ProductScreenState extends State<ProductScreen> {
                     children: [
                       const Divider(),
                       Padding(
-                        padding:
-                            const EdgeInsets.only(left: 20.0, top: 10, right: 20.0),
+                        padding: const EdgeInsets.only(
+                            left: 20.0, top: 10, right: 20.0),
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            
                             Image.network(
                               item.image.toString(),
-                              height: 150,
-                              width: 150,
+                              height: 120,
+                              width: 120,
                             ),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                
                                 SizedBox(
                                   width: 200,
                                   child: Text(
                                     item.title.toString(),
+                                    overflow: TextOverflow.ellipsis,
                                     maxLines: 100,
                                     style: const TextStyle(
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
-                                Text(" \$${item.price.toString()}"),
-                                Text(" Category: ${item.category.toString()}")
+                                Text(" Rs. ${item.price.toString()}"),
+                                Text(item.category.toString())
                               ],
                             )
                           ],
