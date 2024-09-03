@@ -46,8 +46,10 @@ class _ProductScreenState extends State<ProductScreen> {
                         ),
                       ),
                     ),
-                    onChanged: (fliterKey) {
-                      
+                    onChanged: (inputFilterValue) {
+                      context.read<ProductBloc>().add(
+                            SearchProduct(inputFilterValue),
+                          );
                     },
                   ),
                 ),
@@ -55,51 +57,105 @@ class _ProductScreenState extends State<ProductScreen> {
                   height: 5,
                 ),
                 Expanded(
-                  child: ListView.builder(
-                      itemCount: state.productList.length,
-                      itemBuilder: (context, index) {
-                        final item = state.productList[index];
-                        return Column(
-                          children: [
-                            const Divider(),
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                  left: 20.0, top: 10, right: 0),
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                  child: state.searchMessage.isNotEmpty
+                      ? Text(state.searchMessage.toString())
+                      : ListView.builder(
+                          itemCount: state.tempProductList.isEmpty
+                              ? state.productList.length
+                              : state.tempProductList.length,
+                          itemBuilder: (context, index) {
+                            if (state.tempProductList.isNotEmpty) {
+                              final item = state.tempProductList[index];
+                              return Column(
                                 children: [
-                                  Image.network(
-                                    item.image.toString(),
-                                    height: 120,
-                                    width: 120,
-                                  ),
-                                  const SizedBox(
-                                    width: 25,
-                                  ),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      SizedBox(
-                                        width: 200,
-                                        child: Text(
-                                          item.title.toString(),
-                                          overflow: TextOverflow.ellipsis,
-                                          maxLines: 100,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold),
+                                  const Divider(),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 20.0, top: 10, right: 0),
+                                    child: Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Image.network(
+                                          item.image.toString(),
+                                          height: 120,
+                                          width: 120,
                                         ),
-                                      ),
-                                      Text(" Rs. ${item.price.toString()}"),
-                                      Text(item.category.toString())
-                                    ],
-                                  )
+                                        const SizedBox(
+                                          width: 25,
+                                        ),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            SizedBox(
+                                              width: 200,
+                                              child: Text(
+                                                item.title.toString(),
+                                                overflow: TextOverflow.ellipsis,
+                                                maxLines: 100,
+                                                style: const TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                            ),
+                                            Text(
+                                                " Rs. ${item.price.toString()}"),
+                                            Text(item.category.toString())
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  ),
                                 ],
-                              ),
-                            ),
-                          ],
-                        );
-                      }),
+                              );
+                            } else {
+                              final item = state.productList[index];
+                              return Column(
+                                children: [
+                                  const Divider(),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 20.0, top: 10, right: 0),
+                                    child: Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Image.network(
+                                          item.image.toString(),
+                                          height: 120,
+                                          width: 120,
+                                        ),
+                                        const SizedBox(
+                                          width: 25,
+                                        ),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            SizedBox(
+                                              width: 200,
+                                              child: Text(
+                                                item.title.toString(),
+                                                overflow: TextOverflow.ellipsis,
+                                                maxLines: 100,
+                                                style: const TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                            ),
+                                            Text(
+                                                " Rs. ${item.price.toString()}"),
+                                            Text(item.category.toString())
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              );
+                            }
+                          }),
                 ),
               ],
             );
